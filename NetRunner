@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Tool Name : NetRunner
+# Author : nordbearbot
+# Date :- 20/01/2022
+
+case "$1" in
+  -m)
+    php modules/.tracem.php
+  ;;
+  -t)
+    case "$#" in
+    2)
+      php modules/.traceip.php $2
+    ;;
+    *)
+      echo "error : invalid arguments !!"
+      echo "use: NetRunner -t <target_ip>"
+    ;;
+    esac
+  ;;
+  -u)
+    php modules/.update.php
+    exit
+  ;;
+  update)
+    php modules/.update.php
+    exit
+  ;;
+  start)
+    php .NetRunner.php
+    exit
+  ;;
+  -rm)
+    php modules/.uninstall.php
+    exit
+  ;;
+  *)
+    echo "Usage: NetRunner [command]... [arguments]..."
+    echo " Commands:"
+    echo " -t <target_ip>      to trace target ip."
+    echo " -m                  to trace your own ip."
+    echo " -h                  to show help."
+    echo " -u                  to update NetRunner."
+    echo " help                to show help."
+    echo " update              to update NetRunner."
+    echo " start               to start NetRunner menu."
+esac
