@@ -27,7 +27,7 @@ NetRunner используется для отслеживания ip-адрес
 
 * `trace` чтоб узнать больше информации
 
-**OR**
+**Или**
 
 * `NetRunner -m` to track your own ip address.
 
